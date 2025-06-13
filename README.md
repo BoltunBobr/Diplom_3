@@ -18,8 +18,7 @@ src/main/java/stellarburgers/pages/
 ├── MainPage.java - Главная страница  
 ├── LoginPage.java - Страница входа  
 ├── RegistrationPage.java - Страница регистрации  
-├── ForgotPasswordPage.java - Страница восстановления пароля  
-└── PersonalAccountPage.java - Личный кабинет  
+└── ForgotPasswordPage.java - Страница восстановления пароля  
 
 ### Тесты
 src/test/java/stellarburgers/tests/  
