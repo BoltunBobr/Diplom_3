@@ -11,6 +11,7 @@ import stellarburgers.user.User;
 import stellarburgers.user.UserClient;
 
 import static org.apache.hc.core5.http.HttpStatus.*;
+import static org.junit.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
@@ -42,7 +43,9 @@ public class LoginTest extends BaseTest {
     public void testLoginFromMainPageButton() {
         mainPage.clickLoginButton();
         loginPage.authorization(email, password);
-        mainPage.isUserLoggedIn();
+
+        boolean isLoggedIn = mainPage.isUserLoggedIn();
+        assertTrue("Пользователь должен быть авторизован после входа через главную страницу", isLoggedIn);
     }
 
     @Test
@@ -51,7 +54,9 @@ public class LoginTest extends BaseTest {
     public void testLoginFromPersonalAccountButton() {
         mainPage.clickPersonalAccountButton();
         loginPage.authorization(email, password);
-        mainPage.isUserLoggedIn();
+
+        boolean isLoggedIn = mainPage.isUserLoggedIn();
+        assertTrue("Пользователь должен быть авторизован после входа через личный кабинет", isLoggedIn);
     }
 
     @Test
@@ -62,7 +67,9 @@ public class LoginTest extends BaseTest {
         loginPage.clickRegisterLink();
         registrationPage.clickOnLoginLink();
         loginPage.authorization(email, password);
-        mainPage.isUserLoggedIn();
+
+        boolean isLoggedIn = mainPage.isUserLoggedIn();
+        assertTrue("Пользователь должен быть авторизован после перехода со страницы регистрации", isLoggedIn);
     }
 
     @Test
@@ -73,7 +80,9 @@ public class LoginTest extends BaseTest {
         loginPage.clickForgotPasswordLink();
         forgotPasswordPage.clickLoginLink();
         loginPage.authorization(email, password);
-        mainPage.isUserLoggedIn();
+
+        boolean isLoggedIn = mainPage.isUserLoggedIn();
+        assertTrue("Пользователь должен быть авторизован после перехода со страницы восстановления пароля", isLoggedIn);
     }
 
     @After
